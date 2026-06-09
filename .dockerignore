@@ -1,0 +1,8 @@
+.git
+client/node_modules
+server/node_modules
+dist
+data/*
+!data/.gitkeep
+uploads/*
+!uploads/.gitkeep
