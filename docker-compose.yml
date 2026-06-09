@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - '5296:5296'
+    volumes:
+      - markitdown-data:/app/data
+      - markitdown-uploads:/app/uploads
+
+volumes:
+  markitdown-data:
+  markitdown-uploads:
