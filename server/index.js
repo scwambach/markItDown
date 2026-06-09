@@ -194,7 +194,12 @@ function removeFile(filename) {
     return
   }
 
-  const filePath = path.join(UPLOADS_DIR, filename)
+  const safeFilename = path.basename(filename)
+  if (safeFilename !== filename) {
+    return
+  }
+
+  const filePath = path.join(UPLOADS_DIR, safeFilename)
   if (fs.existsSync(filePath)) {
     fs.unlinkSync(filePath)
   }
