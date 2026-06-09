@@ -320,6 +320,7 @@ app.delete('/api/comments/:id', (req, res) => {
 })
 
 if (fs.existsSync(DIST_DIR)) {
+  const indexHtml = fs.readFileSync(path.join(DIST_DIR, 'index.html'), 'utf8')
   app.use(express.static(DIST_DIR))
 
   app.use((req, res, next) => {
@@ -333,7 +334,7 @@ if (fs.existsSync(DIST_DIR)) {
       return
     }
 
-    res.sendFile(path.join(DIST_DIR, 'index.html'))
+    res.type('html').send(indexHtml)
   })
 }
 
