@@ -35,3 +35,5 @@ Thumbs.db
 
 # Docker
 .dockerignore
+
+markitdown.tar.gz
